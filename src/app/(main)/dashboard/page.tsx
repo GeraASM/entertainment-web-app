@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { LoadingMain } from "@/components/loading/Loading";
+import { LoadingMain } from "@/components/loading/LoadingMain";
 import { authClient } from "@/lib/auth-client";
 import { ButtonSignOut } from "@/components/ui/ButtonSignOut"
 import { Logo } from "@/components/icon/Logo";
@@ -12,14 +12,14 @@ export default function DashboardPage() {
     const [tag, setTag] = useState<"Home"|"Movie"|"TV Series"|"BookMark">("Home")
     const router = useRouter();
      const { 
-        data: session, 
         isPending, //loading state
         error, //error object
-        refetch //refetch the session
     } = authClient.useSession();
+
     if (error) {
         router.push("/signin");
     }
+    if (isPending) return <LoadingMain />
     return (
         <main className="w-full  min-h-screen p-200 md:p-300 xl:flex xl:gap-300 relative">
             <header className="bg-blue-900 md:rounded-[10px] flex justify-between items-center px-4 xl:py-8 h-700 xl:h-auto xl:min-w-24 xl:max-h-[900px] xl:flex-col xl:justify-start xl:gap-500 xl:sticky">

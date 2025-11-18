@@ -1,6 +1,12 @@
 import { Logo } from "@/components/icon/Logo"
 import { FormSignUp } from "@/components/forms/FormSignUp"
-export default function LoginPage() {
+import { getSession } from "@/lib/actions";
+import { redirect } from "next/navigation";
+export default async function LoginPage() {
+    const {session} = await getSession();
+        if (session?.user) {
+            redirect("/dashboard");
+        }
 
     return (
         <main>
