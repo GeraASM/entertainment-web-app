@@ -6,24 +6,33 @@ export function LoadingMain() {
 
                     </div>
                     <nav>
-                        <ul className="flex items-center gap-200 xl:flex-col md:gap-400 bg-white/70 animae-pulse p-400">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                        <ul className="flex items-center gap-200 xl:flex-col md:gap-400 animae-pulse p-400">
+                            <li className="w-400 h-400 bg-white/70 animate-pulse rounded-full"></li>
+                            <li className="w-400 h-400 bg-white/70 animate-pulse rounded-full"></li>
+                            <li className="w-400 h-400 bg-white/70 animate-pulse rounded-full"></li>
+                            <li className="w-400 h-400 bg-white/70 animate-pulse rounded-full"></li>
                         </ul>
                     </nav>
-                    <figure className="w-300 h-300 md:w-400 md:h-400 rounded-full border border-white xl:mt-auto">
-                        {/* <Image className="object-cover w-full h-full" src={"/assets/image-avatar.png"} alt="Avatar" width={24} height={24} /> */}
-                        <div className="w-300 h-300 rounded bg-white/70">
+                    <figure className="w-300 h-400 flex gap-400 md:w-400 md:h-400 rounded-full xl:mt-auto">
+                        
+                        <div className="w-300 h-300 bg-white/70 animate-pulse rounded-full">
+
+                        </div>
+                        <div className="w-300 h-300 bg-white/70 animate-pulse rounded-full">
 
                         </div>
                     </figure>
                     
                     {/* <ButtonSignOut /> */}
                 </header>
-                <section className="mt-300 md:mt-400 xl:mt-0 max-w-[1276px] animate-pulse relative">
-                        
+                <section className="mt-300 md:mt-400 full xl:mt-0 max-w-[1276px] animate-pulse relative">
+                        <div className="w-full">
+                            <div >
+                                <div className="flex gap-20 h-700 rounded-2xl  bg-white/70 animate-pulse items-center xl:min-w-[1276px]">
+                                    
+                                </div>
+                            </div>
+                        </div>
                 </section>
             </main>
     )

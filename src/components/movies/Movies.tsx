@@ -1,6 +1,6 @@
 "use client"
 import data from "@/assets/data.json";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { TvCategory, MovieCategory } from "./WhatCategory";
 import Dot from "../ui/Dot";
@@ -25,7 +25,6 @@ export default function Movies({filter}: {filter: "Home"|"Movie"|"TV Series"|"Bo
     const [search, setSearch] = useState<string>("");
 
     function addRemoveBookMark (movieTitle: string) {
-        console.log(movieTitle);
         setAllMovies((prev) => {
             const moviesCopy = [...prev];
             const indexMovie = moviesCopy.findIndex(movie => movie.title === movieTitle);
@@ -39,11 +38,7 @@ export default function Movies({filter}: {filter: "Home"|"Movie"|"TV Series"|"Bo
         })
     } 
 
-    useEffect(() => {
-        if (allMovies.length > 0) {
-            console.log(allMovies);
-        }
-    }, [allMovies])
+    
    
     return (
         <section className="overflow-hidden">
