@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-blue-950: #10141E;
+  --color-blue-900: #161D2F;
+  --color-blue-500: #5A698F;
+  --color-red-500: #FC4747;
+
+  --spacing-0: 0px;
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-700: 56px;
+  --spacing-900: 72px;
+  --spacing-1000: 80px;
+
+  --container-f: 400px;
+ 
+  --font-outfit: "Outfit", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer components {
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .show-play:hover .play {
+    display: flex !important;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.253);
   }
+
+  .marked path {
+    fill: #fff !important;
+    stroke-width: 0 !important;
+  } 
+
+  .bookmarked-hover:hover {
+    background-color: #fff !important;
+  }
+
+  .bookmarked-hover:hover path {
+    fill: #fff !important;
+    stroke: #5A698F;
+
+  }
+
+  .icon-focus {
+    cursor: pointer;
+  }
+  .icon-focus:hover path {
+    fill: #FC4747;
+  }
+
+  .icon-selected path {
+    fill: #fff;
+  }
+
+  .text-present-1-light {
+    @apply text-[32px] leading-tight font-light;
+    letter-spacing: -0.5px;
+  }
+
+  .text-present-1-light-mobile {
+    @apply text-xl leading-tight font-light;
+    letter-spacing: -0.3px;
+  }
+
+  .text-present-2-medium {
+    @apply text-2xl leading-tight font-medium tracking-normal;
+  }
+
+  .text-present-2-light {
+    @apply text-2xl leading-tight font-light tracking-normal;
+  }
+
+  .text-present-2-light-mobile {
+    @apply text-base leading-tight tracking-normal font-light;
+  }
+
+  .text-present-3-medium {
+    @apply text-lg leading-tight tracking-normal font-medium;
+  }
+
+  .text-present-3-medium-mobile {
+    @apply text-[15px] leading-tight tracking-normal font-medium;
+  }
+
+  .text-present-4-light {
+    @apply text-[15px] leading-tight tracking-normal font-light;
+  }
+
+  .text-present-4-medium-mobile {
+    @apply text-[14px] leading-tight tracking-normal font-medium;
+  }
+
+  .text-present-5-light {
+    @apply text-[13px] leading-tight tracking-normal font-light;
+  }
+  .text-present-5-light-mobile {
+    @apply text-[12px] leading-tight tracking-normal font-light;
+  }
+
+  .text-present-6-light-mobile {
+     @apply text-[11px] leading-tight tracking-normal font-light;
+  }
+
+
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #10141E; 
+  display: flex; align-items: center; justify-content: center;
 }
